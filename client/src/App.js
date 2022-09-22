@@ -4,12 +4,12 @@ import './App.css';
 import { getData } from './api/getData';
 
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState('');
 
   useEffect(
     () => {
-      const data = getData();
-      setData(data);
+      getData()
+        .then(res => setData(res));
     },
     []
   );
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      hi
+      {data}
     </div>
   );
 }
