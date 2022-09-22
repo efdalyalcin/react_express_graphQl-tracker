@@ -1,8 +1,17 @@
-const BASE_URL = 'http://localhost:9000/testAPI';
+const BASE_URL = 'http://localhost:4000/graphql';
 
 export const getData = async () => {
-  const data = await fetch(BASE_URL)
-    .then(res => res.text());
+  const response = await fetch(BASE_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: '{ warriors { name } }',
+    }),
+  })
+
+  const data = await response.json();
 
   return data;
 };

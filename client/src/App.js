@@ -4,12 +4,12 @@ import './App.css';
 import { getData } from './api/getData';
 
 function App() {
-  const [data, setData] = useState('');
+  const [data, setData] = useState([]);
 
   useEffect(
     () => {
       getData()
-        .then(res => setData(res));
+        .then(res => setData(res.data.warriors));
     },
     []
   );
@@ -18,7 +18,11 @@ function App() {
 
   return (
     <div className="App">
-      {data}
+      {data.map(warrior => (
+        <p key={warrior.name}>
+          {warrior.name}
+        </p>
+      ))}
     </div>
   );
 }

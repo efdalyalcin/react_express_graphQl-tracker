@@ -1,26 +1,26 @@
 import { makeExecutableSchema } from "@graphql-tools/schema";
 
 export const data = {
-  warriors: [
+  users: [
     { id: "001", name: "Jaime" },
     { id: "002", name: "Jorah" },
   ],
 };
 
 export const typeDefs = `
-  type Warrior {
+  type User {
     id: ID!
     name: String!
   }
 
   type Query {
-    warriors: [Warrior]
+    users: [User]
   }
 `;
 
 export const resolvers = {
   Query: {
-    warriors: (obj, args, context, info) => context.warriors,
+    users: (obj, args, context, info) => context.users,
   },
 };
 
