@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { graphqlHTTP } from "express-graphql";
-import { data, executableSchema } from "./userData";
+import { data, executableSchema } from "./users";
 
 const app = express();
 const port = 4000;
