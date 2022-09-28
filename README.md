@@ -1,0 +1,1 @@
+you can start the project with `npm start` in the main folder
