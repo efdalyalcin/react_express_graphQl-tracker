@@ -1,11 +1,5 @@
 import psql from '../connection';
-import { Query } from './users.types';
-
-// export const resolvers = {
-//   Query: {
-//     users: (obj: any, args: any, context: Query, info: any) => context.users,
-//   },
-// };
+// import nanoid from 'nanoid';
 
 export const resolvers = {
   Query: {

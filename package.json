@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "concurrently --kill-others \"cd client && npm start\" \"cd api && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
